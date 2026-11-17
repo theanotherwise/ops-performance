@@ -1,5 +1,13 @@
 # Memory tuning
 
+```bash
+sysctl vm.max_map_count
+```
+
+```bash
+sysctl -w vm.max_map_count=1048576
+```
+
 ## Overcommit
 
 ### Inspect

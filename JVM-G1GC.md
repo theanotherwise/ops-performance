@@ -47,15 +47,15 @@
 ## G1GC Snippet
 
 ```yaml
--XX:+UseG1GC
+-XX:+UseG1GC                          # JDK 25
 
 -XX:MaxGCPauseMillis=100               # Default: 200
--XX:InitiatingHeapOccupancyPercent=25  # Default: 45
+-XX:InitiatingHeapOccupancyPercent=25  # Default: adaptive, initially 45
 -XX:G1ReservePercent=25                # Default: 10
 -XX:MaxTenuringThreshold=8             # Default: 15 (adaptive)
 -XX:G1MixedGCCountTarget=16            # Default: 8
--XX:ConcGCThreads=48                   # Default: CPU_COUNT / 4
--XX:ParallelGCThreads=96               # Default: CPU_COUNT
+-XX:ConcGCThreads=48                   # Host example; default: ParallelGCThreads/4
+-XX:ParallelGCThreads=96               # Host example; default: CPU-dependent
 ```
 
 ## ZGC Snippet

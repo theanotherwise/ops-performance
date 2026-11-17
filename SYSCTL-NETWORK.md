@@ -77,7 +77,7 @@ sysctl net.core.busy_poll
 
 ```bash
 sysctl -w net.core.dev_weight=128
-sysctl -w net.core.dev_weight_rx_bias=32
+sysctl -w net.core.dev_weight_rx_bias=1 # Default multiplier
 sysctl -w net.core.netdev_budget=600
 sysctl -w net.core.netdev_budget_usecs=8000
 sysctl -w net.core.busy_read=50
@@ -88,7 +88,7 @@ sysctl -w net.core.busy_poll=50
 
 ```bash
 sysctl -w net.core.dev_weight=300
-sysctl -w net.core.dev_weight_rx_bias=64
+sysctl -w net.core.dev_weight_rx_bias=1
 ```
 
 `netdev_budget` and `netdev_budget_usecs` trade CPU time for backlog drainage under bursty traffic.
@@ -99,7 +99,6 @@ sysctl -w net.core.dev_weight_rx_bias=64
 ### Inspect
 
 ```bash
-sysctl vm.max_map_count
 sysctl net.core.somaxconn
 sysctl net.ipv4.tcp_max_syn_backlog
 sysctl net.core.optmem_max
@@ -109,7 +108,6 @@ sysctl net.core.netdev_max_backlog
 ### Configure
 
 ```bash
-sysctl -w vm.max_map_count=1048576
 sysctl -w net.core.somaxconn=65535
 sysctl -w net.ipv4.tcp_max_syn_backlog=65535
 sysctl -w net.core.optmem_max=65536
