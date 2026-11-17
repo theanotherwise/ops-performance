@@ -21,6 +21,7 @@ sysctl -w net.ipv4.ip_local_port_range="1024 65535"
 ```bash
 sysctl net.ipv4.tcp_fin_timeout
 sysctl net.ipv4.tcp_tw_reuse
+sysctl net.ipv4.tcp_max_tw_buckets
 sysctl net.ipv4.tcp_timestamps
 sysctl net.ipv4.tcp_sack
 sysctl net.ipv4.tcp_window_scaling
@@ -39,6 +40,7 @@ sysctl net.netfilter.nf_conntrack_max
 ```bash
 sysctl -w net.ipv4.tcp_fin_timeout=5
 sysctl -w net.ipv4.tcp_tw_reuse=1
+sysctl -w net.ipv4.tcp_max_tw_buckets=500000
 sysctl -w net.ipv4.tcp_timestamps=1
 sysctl -w net.ipv4.tcp_sack=1
 sysctl -w net.ipv4.tcp_window_scaling=1
@@ -51,6 +53,46 @@ sysctl -w net.ipv4.tcp_keepalive_probes=5
 sysctl -w net.ipv4.tcp_congestion_control=cubic
 sysctl -w net.netfilter.nf_conntrack_max=262144
 ```
+
+### Higher TIME_WAIT limit
+
+```bash
+sysctl -w net.ipv4.tcp_max_tw_buckets=2000000
+```
+
+## High PPS and packet processing
+
+### Inspect
+
+```bash
+sysctl net.core.dev_weight
+sysctl net.core.dev_weight_rx_bias
+sysctl net.core.netdev_budget
+sysctl net.core.netdev_budget_usecs
+sysctl net.core.busy_read
+sysctl net.core.busy_poll
+```
+
+### Configure
+
+```bash
+sysctl -w net.core.dev_weight=128
+sysctl -w net.core.dev_weight_rx_bias=32
+sysctl -w net.core.netdev_budget=600
+sysctl -w net.core.netdev_budget_usecs=8000
+sysctl -w net.core.busy_read=50
+sysctl -w net.core.busy_poll=50
+```
+
+### Higher packet processing weights
+
+```bash
+sysctl -w net.core.dev_weight=300
+sysctl -w net.core.dev_weight_rx_bias=64
+```
+
+`netdev_budget` and `netdev_budget_usecs` trade CPU time for backlog drainage under bursty traffic.
+`busy_read` and `busy_poll` can reduce latency at the cost of extra CPU burn while sockets are polled.
 
 ## Socket and device limits
 
