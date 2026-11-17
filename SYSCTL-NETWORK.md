@@ -1,5 +1,19 @@
 # Network tuning
 
+## Local port range
+
+### Inspect
+
+```bash
+sysctl net.ipv4.ip_local_port_range
+```
+
+### Configure
+
+```bash
+sysctl -w net.ipv4.ip_local_port_range="1024 65535"
+```
+
 ## TCP behavior and connection tracking
 
 ### Inspect

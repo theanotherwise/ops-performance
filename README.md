@@ -12,10 +12,6 @@ This repository collects low-level system tuning notes and selected runtime-leve
     <th align="right">Badge ↗</th>
   </tr>
   <tr>
-    <td valign="middle" align="left"><b>General</b></td>
-    <td valign="middle" align="right" width="220"><a href="SYSCTL-GENERAL.md"><img alt="SYSCTL GENERAL" src="https://img.shields.io/badge/GENERAL-0ea5e9?style=for-the-badge&logo=linux&logoColor=white"></a></td>
-  </tr>
-  <tr>
     <td valign="middle" align="left"><b>Network</b></td>
     <td valign="middle" align="right" width="220"><a href="SYSCTL-NETWORK.md"><img alt="SYSCTL NETWORK" src="https://img.shields.io/badge/NETWORK-22c55e?style=for-the-badge&logo=linux&logoColor=white"></a></td>
   </tr>
