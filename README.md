@@ -20,14 +20,6 @@ This repository collects low-level system tuning notes and selected runtime-leve
     <td valign="middle" align="right" width="220"><a href="SYSCTL-NETWORK.md"><img alt="SYSCTL NETWORK" src="https://img.shields.io/badge/NETWORK-22c55e?style=for-the-badge&logo=linux&logoColor=white"></a></td>
   </tr>
   <tr>
-    <td valign="middle" align="left"><b>Sockdev</b></td>
-    <td valign="middle" align="right" width="220"><a href="SYSCTL-SOCKDEV.md"><img alt="SYSCTL SOCKDEV" src="https://img.shields.io/badge/SOCKDEV-f59e0b?style=for-the-badge&logo=linux&logoColor=white"></a></td>
-  </tr>
-  <tr>
-    <td valign="middle" align="left"><b>TCP mem</b></td>
-    <td valign="middle" align="right" width="220"><a href="SYSCTL-TCP-MEM.md"><img alt="SYSCTL TCP_MEM" src="https://img.shields.io/badge/TCP_MEM-14b8a6?style=for-the-badge&logo=linux&logoColor=white"></a></td>
-  </tr>
-  <tr>
     <td valign="middle" align="left"><b>Mem overcommit</b></td>
     <td valign="middle" align="right" width="220"><a href="SYSCTL-MEMORY-OVERCOMMIT.md"><img alt="SYSCTL MEM_OVER" src="https://img.shields.io/badge/MEM_OVER-06b6d4?style=for-the-badge&logo=linux&logoColor=white"></a></td>
   </tr>
